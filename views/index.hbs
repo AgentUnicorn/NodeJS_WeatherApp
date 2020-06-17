@@ -1,0 +1,23 @@
+<h3>Get your forecast now</h3>
+
+<form action="/" method="GET">
+    <input type="text" name="city" placeholder="Type your city here" required>
+    <input type="submit" value="Get Forecast">
+</form>
+
+<h3 class="pt-5">Your location: <strong>{{city}}</strong></h3>
+{{#if forecast}}
+<h2>
+    <img src="{{iconurl}}" height="100px" weight="100px">
+    
+    <strong>
+        {{forecast.temp}}°C
+        {{forecast.weather.0.description}}
+    </strong>
+</h2>
+
+<h5>
+    Feels like: {{forecast.feels_like}}
+    Pressure: {{forecast.pressure}}
+</h5>
+{{/if}}
